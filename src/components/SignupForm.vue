@@ -1,13 +1,24 @@
 <template>
   <form>
     <label>Email:</label>
-    <input type="email" required>
+    <!-- v-model directive adds 2 way data binding, from the input to the data, and vice versa -->
+    <input type="email" required v-model="email">
+
+    <label>Password:</label>
+    <input type="password" required v-model="password">
   </form>
+  <p>Email: {{ email }}</p>
+  <p>Password: {{ password }}</p>
 </template>
 
 <script>
 export default {
-
+    data() {
+        return {
+            email: '',
+            password: ''
+        }
+    }
 }
 </script>
 
